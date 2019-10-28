@@ -34,7 +34,7 @@ var layouts = {
  * @class Launchpad
  * @extends {EventEmitter}
  */
-export default class Launchpad extends EventEmitter {
+module.exports = class Launchpad extends EventEmitter {
   /**
    * Creates an instance of Launchpad.
    * 

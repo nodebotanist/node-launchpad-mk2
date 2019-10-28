@@ -3,7 +3,7 @@
  * 
  * @class Button
  */
-export default class Button{
+module.exports = class Button{
   /**
    * Creates an instance of Button. You shouldn't need to use this, Buttons are generated with a Launchpad instance.
    * @param {Launchpad} launchpad The Launchpad this button belongs to.
