@@ -68,7 +68,7 @@ module.exports = class Launchpad extends EventEmitter {
       let launchpadPort = 0;
 
       for (let i = 0; i < portCount; i++) {
-        if (input.getPortName(i) === 'Launchpad MK2') {
+        if (this._input.getPortName(i) === 'Launchpad MK2') {
           launchpadPort = i
           console.log(`Launchpad found at port ${i}`)
         }
