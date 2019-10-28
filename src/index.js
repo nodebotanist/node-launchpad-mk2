@@ -67,7 +67,7 @@ module.exports = class Launchpad extends EventEmitter {
     this._input.on("message", (dTime, message) => {
       if(message[0] === 176 || message[0] === 144){
         // button message
-        if(message[2] > 0)
+        if(message[2] > 0) {
 
         console.log(`Button message: ${message}`)
           /**
@@ -82,7 +82,7 @@ module.exports = class Launchpad extends EventEmitter {
             button: this.buttons[message[1]],
             velocity: message[2]
           })
-        else
+        } else {
           /**
            * Fired when a button is released.
            * 
@@ -90,6 +90,7 @@ module.exports = class Launchpad extends EventEmitter {
            * @type {Button}
            */
           this.emit("release", this.buttons[message[1]])
+        }
       }
     })
 
