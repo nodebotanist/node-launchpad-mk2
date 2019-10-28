@@ -24,6 +24,8 @@ module.exports = class Button{
      */
     this.note = note
 
+    console.log('Note: ', note)
+
     var noteAsString = note.toString().split("")
 
     /**
