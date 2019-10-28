@@ -48,7 +48,7 @@ module.exports = class Button{
       // bottom button
       this.x = parseInt(noteAsString[0])
       this.y = 0
-    } else if (note < 104)  {
+    } else if (note < 104 && note < 112)  {
       //top  button
       this.x = 9
       this.y = parseInt(noteAsString[2], 10) - 3 

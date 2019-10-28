@@ -62,7 +62,23 @@ module.exports = class Launchpad extends EventEmitter {
     this._input = new midi.input()
     this._output = new midi.output()
 
-    this._input.openPort(params.in)
+    //auto-find port
+    if(!params.in) {
+      const portCount = this._input.getPortCount()
+      let launchpadPort = 0;
+
+      for (let i = 0; i < portCount; i++) {
+        if (input.getPortName(i) === 'Launchpad MK2') {
+          launchpadPort = i
+          console.log(`Launchpad found at port ${i}`)
+        }
+      }
+      this._input.openPort(launchpadPort)
+      this._output.openPort(launchpadPort)
+    } else {
+      this._input.openPort(params.in)
+      this._output.openPort(params.out)
+    }
 
     this._input.on("message", (dTime, message) => {
       if(message[0] === 176 || message[0] === 144){
@@ -93,8 +109,6 @@ module.exports = class Launchpad extends EventEmitter {
         }
       }
     })
-
-    this._output.openPort(params.out)
 
     for(var i=0;i<112;i++)
       this.buttons.push(new Button(this, i))
