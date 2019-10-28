@@ -96,12 +96,9 @@ module.exports = class Launchpad extends EventEmitter {
 
     this._output.openPort(params.out)
 
-    for(var i=0;i<100;i++)
+    for(var i=0;i<112;i++)
       this.buttons.push(new Button(this, i))
 
-    for(var i=104;i<112;i++) {
-      this.buttons.push(new Button(this, i))
-    }
   }
 
   /**
