@@ -98,6 +98,10 @@ module.exports = class Launchpad extends EventEmitter {
 
     for(var i=0;i<100;i++)
       this.buttons.push(new Button(this, i))
+
+    for(var i=104;i<112;i++) {
+      this.buttons.push(new Button(this, i))
+    }
   }
 
   /**
