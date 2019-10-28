@@ -68,6 +68,8 @@ module.exports = class Launchpad extends EventEmitter {
       if(message[0] === 176 || message[0] === 144){
         // button message
         if(message[2] > 0)
+
+        console.log(`Button message: ${message}`)
           /**
            * Fired when a button is pressed.
            * 
